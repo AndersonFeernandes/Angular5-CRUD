@@ -1,0 +1,31 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>
+        Nome da Moeda
+      </td>
+      <td>
+        Preço da Moeda
+      </td>
+      <td colspan="2">
+        Ações
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coin of coins">
+      <td>
+        {{coin.name}}
+      </td>
+      <td>
+        {{coin.price}}
+      </td>
+      <td>
+        <a [routerLink]="['/edit', coin.id]" class="btn btn-primary">Editar</a>
+      </td>
+      <td>
+          <button (click)="deleteCoin(coin.id)" class="btn btn-danger">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
